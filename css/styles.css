@@ -1,0 +1,201 @@
+/* ==========================================================================
+   GOOGLE IMPORT LINK
+   ========================================================================== */
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap");
+
+/* ==========================================================================
+   CSS VARIABLES & RESET
+   ========================================================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*ROOT FORMATTING*/
+:root {
+  --site-font: "Sora", sans-serif;
+  --icon-bg-color: #f5c044;
+  --checkmark-bg-color: #4ca154;
+  --title-text-color: #18181b;
+  --body-text-color: #52525a;
+  --star-color: #d4d4d8;
+  --site-bg-color: #fafaf9;
+}
+
+/**General Tag Formatting**/
+body {
+  font-family: var(--site-font);
+  background-color: var(--site-bg-color);
+}
+
+/*Format title tags*/
+h1 {
+  font-size: 2.25rem;
+}
+
+/*Format reviewer body text*/
+p {
+  font-size: 1.25rem;
+  color: var(--body-text-color);
+}
+
+.card-content h2,
+.card-content p {
+  font-size: 1rem;
+}
+
+/*Format list items*/
+ul {
+  list-style-type: none;
+}
+/*Create check marks*/
+li::before {
+  content: "\2713";
+  position: relative;
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: var(--checkmark-bg-color);
+  color: white;
+  text-align: center;
+  margin-right: 5px;
+}
+
+li {
+  font-size: 0.875rem;
+  margin-bottom: 10px;
+  color: var(--body-text-color);
+}
+/* ==========================================================================
+   REVIEW SECTION FORMATTING
+   ========================================================================== */
+
+/*Format article container*/
+.testimonials-container {
+  padding: 10px;
+}
+
+/*Format star icon*/
+.star-icon {
+  background-color: var(--icon-bg-color);
+  display: inline-block;
+  padding: 10px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+/*Format title text*/
+.title-text {
+  margin-bottom: 10px;
+  color: var(--title-text-color);
+}
+
+/*Format review text container*/
+.reviewers-text {
+  margin-bottom: 30px;
+}
+
+/*Format review text content*/
+.reviewers-text p {
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+/*Format review cards*/
+.review-card {
+  margin-bottom: 25px;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0px 30px 100px 0px rgba(17, 23, 41, 0.05);
+}
+
+/*Format company card imgs*/
+.company-card {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.company-card > img {
+  margin-right: 10px;
+}
+
+/*Format card text*/
+.card-content h2 {
+  margin-bottom: 15px;
+  color: var(--title-text-color);
+}
+
+.card-content {
+  margin-bottom: 20px;
+}
+
+/* ==========================================================================
+   MEDIA QUERIES
+   ========================================================================== */
+
+/* ==========================================================================
+   TABLET MEDIA QUERY
+   ========================================================================== */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  /*Center items in review container*/
+  .review-card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  /*Format review card width*/
+  .review-card {
+    width: 350px;
+  }
+
+  /*Change first review card to the right*/
+  .review-card:nth-of-type(1) {
+    transform: translateX(100px);
+  }
+
+  /*Change second review card to the left*/
+  .review-card:nth-of-type(2) {
+    transform: translateX(-100px);
+  }
+}
+
+/* ==========================================================================
+   DESKTOP MEDIA QUERY
+   ========================================================================== */
+
+@media screen and (min-width: 1025px) {
+  /*Rearrange testimonial container orientation*/
+  .testimonials-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10%;
+    margin-top: 100px;
+  }
+
+  /*Format width of each container*/
+  .reviewers-text {
+    max-width: 500px;
+  }
+
+  /*Format card width*/
+  .review-card {
+    width: 350px;
+  }
+
+  /*Change first review card to the right*/
+  .review-card:nth-of-type(1) {
+    transform: translateX(100px);
+  }
+
+  /*Change second review card to the left*/
+  .review-card:nth-of-type(2) {
+    transform: translateX(-100px);
+  }
+}
